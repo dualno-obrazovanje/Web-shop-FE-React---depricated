@@ -1,17 +1,19 @@
-import "./App.css";
+import React from "react";
 import { TextField, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import './style.css';
 
-function App() {
+const LogIn = () => {
   return (
     <div className="form">
       <h2>Login</h2>
       <TextField variant="standard" label="Username" />
       <TextField variant="standard" type="password" label="Password" />
-      <a href="#" className="forgotPassword">Forgot password?</a>
+      <Link to="/" className="forgotPassword">Forgot password?</Link>
       <Button variant="contained">Login</Button>
-      <a href="#" className="signUp">Sign up</a>
+      <Link to="/signup" className="signUp">Sign up</Link>
     </div>
   );
-}
+};
 
-export default App;
+export default LogIn;
