@@ -5,13 +5,22 @@ import './style.css';
 
 const LogIn = () => {
   return (
-    <div className="form">
-      <h2>Login</h2>
-      <TextField variant="standard" label="Username" />
-      <TextField variant="standard" type="password" label="Password" />
-      <Link to="/" className="forgotPassword">Forgot password?</Link>
+    <div className="login-form">
+      <h1>Login</h1>
+      <TextField 
+        variant="outlined" 
+        label="Username" 
+        className="ws-login-username-input" 
+      />
+      <TextField 
+        variant="outlined" 
+        type="password" 
+        label="Password" 
+        className="ws-login-password-input" 
+      />
       <Button variant="contained">Login</Button>
-      <Link to="/signup" className="signUp">Sign up</Link>
+      <Link to="/" >Forgot password?</Link>
+      <Link to="/signup">Create an account</Link>
     </div>
   );
 };
