@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import ControlCameraIcon from '@mui/icons-material/ControlCamera';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CustomHeadingIcon from "./CustomHeadingIcon";
 import { Link } from "react-router-dom";
 import './style.css';
 
@@ -11,15 +12,15 @@ const Heading = () => {
   return (
     <div className="heading-container">
       <div className="ws-top-level-heading">
-        <SearchIcon className="functional-icon"/>
+        <CustomHeadingIcon functionalIcon CustomIcon={SearchIcon}/>
         <div className="title">
-          <ControlCameraIcon className="decor-icon"/>
+          <CustomHeadingIcon CustomIcon={ControlCameraIcon}/>
           <h1>WebShop</h1>
-          <ControlCameraIcon className="decor-icon"/>
+          <CustomHeadingIcon CustomIcon={ControlCameraIcon}/>
         </div>
         <div className="right-icon-group">
-          <PersonIcon className="functional-icon"/>
-          <ShoppingCartIcon className="functional-icon"/>
+          <CustomHeadingIcon functionalIcon CustomIcon={PersonIcon}/>
+          <CustomHeadingIcon functionalIcon CustomIcon={ShoppingCartIcon}/>
         </div>
       </div>
       <Divider />
