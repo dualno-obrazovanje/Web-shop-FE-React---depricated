@@ -1,17 +1,43 @@
-import React from "react";
-import Button  from "@mui/material/Button";
-import './style.css';
-const ProductManipulation = () => {
+import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import ManipulationLink from "./ManipulationLink";
+import TextField from '@mui/material/TextField';
+import './style.scss';
+const ProductManipulation = ({ categories }) => {
+    const [showFilterOption, setShowFilterOption] = useState(false);
+
+    const displayFilterManipulation = () => {
+        setShowFilterOption(!showFilterOption);
+    }
+
     return (
         <>
-            <a>All products</a>
-            <a>Category 1</a>
-            <a>Category 2</a>
-            <a>Category 3</a>
+            <div className="ws-product-manipulation-container">
+                <div>
+                    {categories.map(category => <ManipulationLink isActive={category.isActive} label={category.label} />)}
+                </div>
+                <Button variant="contained" className="ws-action-button" onClick={displayFilterManipulation}>Filter</Button>
+            </div>
 
-            <Button>Filter</Button>
+            {showFilterOption && <div className="ws-product-filter-container">
+                <div>
+                    <TextField 
+                        id="outlined-basic"
+                        label="Min price"
+                        variant="outlined"
+                        type="number"    
+                    />
+                    <TextField 
+                        id="outlined-basic"
+                        label="Max price"
+                        variant="outlined"
+                        type="number"    
+                    />
+                </div>
+                <Button variant="contained" className="ws-action-button">Apply</Button>
+            </div>}
         </>
-        
+
     )
 }
 

@@ -1,25 +1,20 @@
 import React from 'react';
-import './style.css';
-import { Grid } from '@mui/material';
 import ProductCard from './ProductCard';
-import productImg from "../../../resources/product.png";
+import './style.scss';
 
- const ProductsGrid = () => {
+const ProductsGrid = ({products}) => {
     return (
-        <Grid container spacing={10}>
-            <Grid item xs={3}> 
-                <ProductCard img={productImg} title="Lorem" description="Lorem ipsum" lager={3}/>
-            </Grid>
-            <Grid item xs={3}> 
-                <ProductCard img={productImg} title="Lorem" description="Lorem ipsum" lager={3}/>
-            </Grid>
-            <Grid item xs={3}> 
-                <ProductCard img={productImg} title="Lorem" description="Lorem ipsum" lager={3}/>
-            </Grid>
-            <Grid item xs={3}> 
-                <ProductCard img={productImg} title="Lorem" description="Lorem ipsum" lager={3}/>
-            </Grid>
-        </Grid>
+        <div className="gridProduct">
+            {products.map((product) =>
+                <ProductCard
+                    img={product.img}
+                    lager={product.lager}
+                    price={product.price}
+                    productName={product.name}
+                    productType={product.type}
+                />
+            )}
+        </div>
     )
 };
 
