@@ -7,6 +7,8 @@ import './style.scss';
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cart, setCart] = useState([]);
+
   useEffect(() => {
     // place for backend call
     // mocked backend response
@@ -35,8 +37,13 @@ const Products = () => {
   return (
     <div className="ws-product-content-container">
       <h1>Products</h1>
-      <ProductManipulation categories={categories} />
-      <ProductsGrid products={products} />
+      <ProductManipulation
+        categories={categories}
+        setCategories={setCategories}
+        products={products}
+        setProducts={setProducts}
+      />
+      <ProductsGrid products={products} setProducts={setProducts} cart={cart} setCart={setCart} />
     </div>
   );
 }

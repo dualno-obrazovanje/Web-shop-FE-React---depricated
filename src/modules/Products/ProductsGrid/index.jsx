@@ -2,11 +2,15 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import './style.scss';
 
-const ProductsGrid = ({products}) => {
+const ProductsGrid = ({ products, setProducts, cart, setCart }) => {
     return (
         <div className="gridProduct">
             {products.map((product) =>
                 <ProductCard
+                    products={products}
+                    setProducts={setProducts}
+                    cart={cart}
+                    setCart={setCart}
                     img={product.img}
                     lager={product.lager}
                     price={product.price}
