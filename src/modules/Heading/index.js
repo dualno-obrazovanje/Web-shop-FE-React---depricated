@@ -6,21 +6,28 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomHeadingIcon from "./CustomHeadingIcon";
 import { Link } from "react-router-dom";
+import Cart from "../Cart";
 import './style.css';
 
-const Heading = () => {
+const Heading = ({ setModal }) => {
+  const openCartModal = () => {
+    console.log('test');
+    const productItems = [{}, {}];
+    setModal(<Cart cartItems={productItems} />);
+  }
+
   return (
     <div className="heading-container">
       <div className="ws-top-level-heading">
-        <CustomHeadingIcon functionalIcon CustomIcon={SearchIcon}/>
+        <CustomHeadingIcon functionalIcon CustomIcon={SearchIcon} />
         <div className="title">
-          <CustomHeadingIcon CustomIcon={ControlCameraIcon}/>
+          <CustomHeadingIcon CustomIcon={ControlCameraIcon} />
           <h1>WebShop</h1>
-          <CustomHeadingIcon CustomIcon={ControlCameraIcon}/>
+          <CustomHeadingIcon CustomIcon={ControlCameraIcon} />
         </div>
         <div className="right-icon-group">
-          <CustomHeadingIcon functionalIcon CustomIcon={PersonIcon}/>
-          <CustomHeadingIcon functionalIcon CustomIcon={ShoppingCartIcon}/>
+          <CustomHeadingIcon functionalIcon CustomIcon={PersonIcon} />
+          <CustomHeadingIcon functionalIcon CustomIcon={ShoppingCartIcon} onClick={openCartModal} />
         </div>
       </div>
       <Divider />
@@ -29,7 +36,7 @@ const Heading = () => {
         <Link to="/">About Us</Link>
         <Link to="/">Backet</Link>
       </div>
-       
+
     </div>
   );
 };
