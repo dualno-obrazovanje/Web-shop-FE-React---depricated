@@ -4,16 +4,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import ControlCameraIcon from '@mui/icons-material/ControlCamera';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import CustomHeadingIcon from "./CustomHeadingIcon";
+import CustomHeadingIcon from "src/shared/CustomHeadingIcon";
 import { Link } from "react-router-dom";
+import productImg from "src/resources/product.png";
 import Cart from "../Cart";
 import './style.css';
 
-const Heading = ({ setModal }) => {
+const Heading = ({ setModal, cart }) => {
   const openCartModal = () => {
-    console.log('test');
-    const productItems = [{}, {}];
-    setModal(<Cart cartItems={productItems} />);
+    setModal(<Cart cartItems={cart} />);
   }
 
   return (

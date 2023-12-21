@@ -1,17 +1,36 @@
 import React from "react";
-import "./style.scss"
+import "./style.scss";
+import CustomHeadingIcon from "../../../shared/CustomHeadingIcon";
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ProductTile = ({ product }) => {
   return (
     <div className="ws-product-tile-container">
-      <img src="" alt="" />
-      {product.name}
-      {product.category}
+      <div className="tile-image-container">
+      <img src={product.img} alt="" />
+      </div>
+      <div className="tile-title">
+      <div>{product.name}</div>
+      <div>{product.type}</div>
+      </div>
+    <div className="quantity-manipulation">
+    <div>
       {product.quantity}
-      <button>{'^'}</button>
-      <button>{'V'}</button>
-      {product.price * product.quantity}
-      <button>DELETE</button>
+    </div>
+      <div className="quantity-button">
+      <CustomHeadingIcon functionalIcon CustomIcon={KeyboardArrowUpIcon}/>
+      <CustomHeadingIcon functionalIcon CustomIcon={KeyboardArrowDownIcon}/>
+      </div>
+    </div>
+
+      <div className="tile-price">
+        {`$${product.price * product.quantity}`}
+      </div>
+      <div className="tile-delete">
+      <CustomHeadingIcon functionalIcon CustomIcon={DeleteIcon}/>
+      </div>
     </div>
   );
 };

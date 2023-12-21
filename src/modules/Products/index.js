@@ -4,10 +4,9 @@ import ProductManipulation from "./ProductManipulation";
 import { mockedProductData } from "./mockedProductData";
 import './style.scss';
 
-const Products = () => {
+const Products = ({ cart, setCart }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     // place for backend call
