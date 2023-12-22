@@ -7,7 +7,7 @@
   border-radius: 15px;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 40px;
-  width: fit-content;
+  max-width: fit-content;
 
   .tile-delete {
     margin-right: 22px;
@@ -39,6 +39,9 @@
   .quantity-manipulation {
     display: flex;
     align-items: center;
+    div:first-child {
+      margin-right: 5px;
+    }
     .quantity-button {
       display: flex;
       flex-direction: column;
@@ -53,6 +56,6 @@
 
   .tile-price {
     margin-right: 36px;
-    cursor: pointer;
+    white-space: nowrap;
   }
 }

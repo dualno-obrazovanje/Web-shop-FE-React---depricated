@@ -9,7 +9,6 @@ const ManipulationLink = ({ setActiveLable, setDispalyProducts, isActive, label,
   }
 
   const handleFilterByCategory = () => {
-
     setCategories(categories.map(category => {
       if (label === category.label) {
         return ({
@@ -22,9 +21,6 @@ const ManipulationLink = ({ setActiveLable, setDispalyProducts, isActive, label,
         isActive: false,
       })
     }));
-
-    console.log(getActiveCategory());
-
     setProducts(products.filter(product => {
       console.log(product.type);
       console.log(getActiveCategory());

@@ -6,13 +6,12 @@ import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CustomHeadingIcon from "src/shared/CustomHeadingIcon";
 import { Link } from "react-router-dom";
-import productImg from "src/resources/product.png";
 import Cart from "../Cart";
 import './style.css';
 
-const Heading = ({ setModal, cart }) => {
+const Heading = ({ setModal, cart, handleModalOpening }) => {
   const openCartModal = () => {
-    setModal(<Cart cartItems={cart} />);
+    setModal(<Cart cartItems={cart} handleModalOpening={handleModalOpening} />);
   }
 
   return (

@@ -16,7 +16,7 @@ const UserLandingPage = () => {
 
   return (
     <>
-      <Heading setModal={handleModalOpening} cart={cart} />
+      <Heading setModal={handleModalOpening} cart={cart} handleModalOpening={handleModalOpening} />
       <Hero />
       <Products cart={cart} setCart={setCart} />
       <Footer />

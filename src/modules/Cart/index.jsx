@@ -1,14 +1,17 @@
 import React from "react";
-import "./style.scss"
 import ProductTile from "./ProductTile";
+import { Button } from "@mui/material";
+import "./style.scss"
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, handleModalOpening }) => {
   return (
     <div className="ws-cart-modal-container">
       <div className="flex-container">
         <div className="flex-child-list-of-products">
           <div className="ws-cart-modal-exit">
-            <p>{`< Continue Shoping`}</p>
+            <p onClick={() => handleModalOpening(null)}>
+              {`< Continue Shoping`}
+            </p>
           </div>
           <div className="ws-cart-modal-header-description">
             <p>{`Shopping cart`}</p>
@@ -18,6 +21,9 @@ const Cart = ({ cartItems }) => {
             {cartItems.map((item) =>
               <ProductTile product={item} />
             )}
+          </div>
+          <div className="buy-button-container">
+            <Button variant="outlined">Buy now</Button>
           </div>
         </div>
         <div className="flex-child-card-details">

@@ -26,7 +26,7 @@ const ProductTile = ({ product }) => {
     </div>
 
       <div className="tile-price">
-        {`$${product.price * product.quantity}`}
+        {`$ ${Math.round(product.price * product.quantity * 100) / 100}`}
       </div>
       <div className="tile-delete">
       <CustomHeadingIcon functionalIcon CustomIcon={DeleteIcon}/>
