@@ -1,7 +1,7 @@
 import React from "react";
 import './style.scss';
 
-const ManipulationLink = ({ setActiveLable, setDispalyProducts, isActive, label, categories, setCategories, products, setProducts }) => {
+const ManipulationLink = ({ setDisplayProducts, isActive, label, categories, setCategories, products }) => {
 
   const getActiveCategory = () => {
     const activeCategory = categories.find(category => category.isActive === true)
@@ -21,11 +21,12 @@ const ManipulationLink = ({ setActiveLable, setDispalyProducts, isActive, label,
         isActive: false,
       })
     }));
-    setProducts(products.filter(product => {
-      console.log(product.type);
-      console.log(getActiveCategory());
-      return product.type === getActiveCategory()
-    }));
+    if(getActiveCategory() === 'All Products') {
+      setDisplayProducts(products);
+      return 0;
+    } 
+    const filterdProducts = products.filter(product => product.type === getActiveCategory());
+    setDisplayProducts(filterdProducts);
   }
 
   return (

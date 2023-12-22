@@ -11,7 +11,12 @@ import './style.css';
 
 const Heading = ({ setModal, cart, handleModalOpening }) => {
   const openCartModal = () => {
-    setModal(<Cart cartItems={cart} handleModalOpening={handleModalOpening} />);
+    setModal(
+      <Cart 
+        cartItems={cart} 
+        handleModalOpening={handleModalOpening} 
+      />
+    );
   }
 
   return (

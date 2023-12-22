@@ -8,7 +8,7 @@ import './style.scss';
 const UserLandingPage = () => {
   const [modalContent, setModalContent] = useState(null);
   const [cart, setCart] = useState([]);
-
+  const [products, setProducts] = useState([]);
 
   const handleModalOpening = (content) => {
     setModalContent(content);
@@ -16,9 +16,13 @@ const UserLandingPage = () => {
 
   return (
     <>
-      <Heading setModal={handleModalOpening} cart={cart} handleModalOpening={handleModalOpening} />
+      <Heading
+        setModal={handleModalOpening}
+        cart={cart}
+        handleModalOpening={handleModalOpening}
+      />
       <Hero />
-      <Products cart={cart} setCart={setCart} />
+      <Products cart={cart} setCart={setCart} products={products} setProducts={setProducts} />
       <Footer />
       {
         modalContent && (

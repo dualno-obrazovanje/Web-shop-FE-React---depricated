@@ -4,8 +4,8 @@ import ProductManipulation from "./ProductManipulation";
 import { mockedProductData } from "./mockedProductData";
 import './style.scss';
 
-const Products = ({ cart, setCart }) => {
-  const [products, setProducts] = useState([]);
+const Products = ({ cart, setCart, products, setProducts }) => {
+  const [displayProducts, setDisplayProducts] = useState(mockedProductData);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Products = ({ cart, setCart }) => {
     }
     setProducts(mockedProductData);
     setCategories(resturucterCategories());
-  }, []);
+  }, [setProducts]);
 
   const setActvieCategories = (categories, activeCategory) => {
     return categories.map(category =>
@@ -40,9 +40,9 @@ const Products = ({ cart, setCart }) => {
         categories={categories}
         setCategories={setCategories}
         products={products}
-        setProducts={setProducts}
+        setDisplayProducts={setDisplayProducts}
       />
-      <ProductsGrid products={products} setProducts={setProducts} cart={cart} setCart={setCart} />
+      <ProductsGrid products={displayProducts} setProducts={setDisplayProducts} cart={cart} setCart={setCart} />
     </div>
   );
 }

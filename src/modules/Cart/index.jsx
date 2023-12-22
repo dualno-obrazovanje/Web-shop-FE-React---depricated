@@ -4,6 +4,16 @@ import { Button } from "@mui/material";
 import "./style.scss"
 
 const Cart = ({ cartItems, handleModalOpening }) => {
+  const handleClick = () => {
+    /*
+      spremiti backend axios call
+        axios.post('...products/buy', { body: {
+          ...cartItems
+        }})
+    */
+   console.log('handled backend call');
+  };
+
   return (
     <div className="ws-cart-modal-container">
       <div className="flex-container">
@@ -23,7 +33,7 @@ const Cart = ({ cartItems, handleModalOpening }) => {
             )}
           </div>
           <div className="buy-button-container">
-            <Button variant="outlined">Buy now</Button>
+            <Button variant="outlined" onClick={handleClick}>Buy now</Button>
           </div>
         </div>
         <div className="flex-child-card-details">
